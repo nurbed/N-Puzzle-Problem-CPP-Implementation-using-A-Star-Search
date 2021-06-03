@@ -61,8 +61,8 @@ public:
 
 	static double ManHattan(const Node &a, const Node &b) {
 		int sum = 0;
-		puzzle_t pR[(Node::boardSqSize * Node::boardSqSize) + 1];
-		puzzle_t pC[(Node::boardSqSize * Node::boardSqSize) + 1];
+		puzzle_t *pR = new puzzle_t[(Node::boardSqSize * Node::boardSqSize) + 1];
+		puzzle_t *pC = new puzzle_t[(Node::boardSqSize * Node::boardSqSize) + 1];
 		for (int r = 0; r < Node::boardSqSize; r++) {
 			for (int c = 0; c < Node::boardSqSize; c++) {
 				pR[a.A[r][c]] = static_cast<puzzle_t>(r);
@@ -78,8 +78,8 @@ public:
 
 	static double nLinearConflicts(const Node &a, const Node &b) {
 		int conflicts = 0;
-		puzzle_t pR[(Node::boardSqSize * Node::boardSqSize) + 1];
-		puzzle_t pC[(Node::boardSqSize * Node::boardSqSize) + 1];
+		puzzle_t *pR = new puzzle_t[(Node::boardSqSize * Node::boardSqSize) + 1];
+		puzzle_t *pC = new puzzle_t[(Node::boardSqSize * Node::boardSqSize) + 1];
 		for (int r = 0; r < Node::boardSqSize; r++) {
 			for (int c = 0; c < Node::boardSqSize; c++) {
 				pR[a.A[r][c]] = static_cast<puzzle_t>(r);
